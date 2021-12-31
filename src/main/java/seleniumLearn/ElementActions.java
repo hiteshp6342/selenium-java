@@ -98,11 +98,11 @@ public class ElementActions {
 		ArrayList<String> options = new ArrayList<String>();
 		WebElement element = getElement(locator);
 		Select select = new Select(element);
-		List<WebElement> colorsList = select.getOptions();
+		List<WebElement> list = select.getOptions();
 		
-		for(WebElement color:colorsList) {
-			String text = color.getText();
-			options.add(text);
+		for(WebElement ele:list) {
+			String value = ele.getText();
+			options.add(value);
 			//System.out.println(color.getText());
 		}
 		
