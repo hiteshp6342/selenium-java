@@ -15,8 +15,8 @@ public class HandleDropDownWithoutSelect {
 		ElementActions actions = new ElementActions(driver);
 		actions.launchUrl("https://demoqa.com/select-menu");
 
-		List<WebElement> dropDownList = driver.findElements(By.xpath("//*[@id='oldSelectMenu']/option"));
-		actions.selectDropDownValueWithoutSelect(dropDownList);
+		By menu = By.xpath("//*[@id='oldSelectMenu']/option");
+		actions.singleSelectDropDownValueWithoutSelect(menu,"Yellow");
 		
 
 	}
