@@ -28,4 +28,10 @@ public class InitalizeBrowser {
 
 			return driver;
 		}
+		
+		// initial browser settings
+		public void setupBrower() {
+			driver.manage().window().maximize();
+			driver.manage().deleteAllCookies();
+		}
 }

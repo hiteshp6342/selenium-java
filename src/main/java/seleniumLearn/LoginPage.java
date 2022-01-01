@@ -18,7 +18,7 @@ public class LoginPage {
 		
 		ElementActions actions = new ElementActions(driver);
 		
-		actions.setupBrower();		
+		initBrowser.setupBrower();		
 		//to launch URL 
 		actions.launchUrl("https://login.salesforce.com/");
 		

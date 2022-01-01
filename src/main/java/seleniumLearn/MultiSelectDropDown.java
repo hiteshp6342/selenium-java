@@ -16,7 +16,7 @@ public class MultiSelectDropDown {
 		InitalizeBrowser initBrowser = new InitalizeBrowser();
 		WebDriver driver = initBrowser.launchBrowser("chrome");
 		
-		
+		initBrowser.setupBrower();
 		ElementActions actions = new ElementActions(driver);
 		
 		actions.launchUrl("https://www.jqueryscript.net/demo/Drop-Down-Combo-Tree/");

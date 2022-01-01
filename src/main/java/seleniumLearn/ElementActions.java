@@ -17,11 +17,7 @@ public class ElementActions {
 		this.driver = driver;
 	}
 
-	// initial browser settings
-	public void setupBrower() {
-		driver.manage().window().maximize();
-		driver.manage().deleteAllCookies();
-	}
+
 
 	// generic methods to launch url
 	public void launchUrl(String url) {
@@ -68,7 +64,6 @@ public class ElementActions {
 	// click ok or accept js alert messages
 	public void confirmAlert() {
 		driver.switchTo().alert().accept();
-		;
 	}
 
 	// dismiss or no js alert messages
@@ -117,7 +112,7 @@ public class ElementActions {
 		List<WebElement> list = getElements(locator);
 		for (int i = 0; i < list.size(); i++) {
 			String text = list.get(i).getText();
-			System.out.println(text);
+			//System.out.println(text);
 			if (text.equals(value)) {
 				list.get(i).click();
 				break;
@@ -143,7 +138,7 @@ public class ElementActions {
 		} else {
 			for (int i = 0; i < list.size(); i++) {
 				String text = list.get(i).getText();
-				System.out.println(text);
+				//System.out.println(text);
 
 				for (int j = 0; j < value.length; j++) {
 					if (text.equals(value[j])) {
@@ -164,7 +159,7 @@ public class ElementActions {
 			links.get(i).click();// stale element reference: element is not attached to the page document --
 									// clicking link refreshes the dom
 			driver.navigate().back(); // going back doesn't fix the problem
-			links = getElements(locator);
+			links = getElements(locator);//update the element with new dom
 		}
 	}
 
