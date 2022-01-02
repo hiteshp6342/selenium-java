@@ -27,6 +27,9 @@ public class LoginPage {
 		actions.doSendKeys(password, "test123");
 		actions.doClick(loginButton);
 		
+//		actions.doActionsSendKeys(userName, "test@gmail.com");
+//		actions.doActionsSendKeys(password, "test123");
+//		actions.doActionsClick(loginButton);
 	}
 	
 	
