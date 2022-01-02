@@ -7,7 +7,9 @@ import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
+
 
 public class ElementActions {
 
@@ -48,6 +50,54 @@ public class ElementActions {
 	public void doClick(By locator) {
 		getElement(locator).click();
 	}
+	
+	
+	/**
+	 * sendkeys using actions class
+	 * @param By locator
+	 * @param String value
+	 */
+	public void doActionsSendKeys(By locator, String value) {
+		WebElement element = getElement(locator);
+		Actions action = new Actions(driver);
+		action.sendKeys(element, value).build().perform();;
+	}
+	
+	
+	/**
+	 * do click using actions class
+	 * @param By locator
+	 */
+	public void doActionsClick(By locator) {
+		WebElement element = getElement(locator);
+		Actions action = new Actions(driver);
+		action.click(element).build().perform();;
+	}
+	
+	
+	/**
+	 * do moveToElement (Hover over element) using actions class
+	 * @param By locator
+	 */
+	public void doMoveToElement(By locator) {
+		WebElement element = getElement(locator);
+		Actions action = new Actions(driver);
+		action.moveToElement(element).build().perform();;
+	}
+	
+	
+	/**
+	 * do moveToElement (Hover over element) for menu and sub-menu using actions class
+	 * @param By locator1
+	 * @param By locator2
+	 */
+	public void doMoveToElement(By locator1, By locator2) {
+		WebElement element1 = getElement(locator1);
+		WebElement element2 = getElement(locator2);
+		Actions action = new Actions(driver);
+		action.moveToElement(element1).moveToElement(element2).build().perform();
+	}
+	
 
 	public String getElementText(By locator) {
 		WebElement element = getElement(locator);
