@@ -11,6 +11,10 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
 
+/**
+ * @author hites
+ *
+ */
 public class ElementActions {
 
 	WebDriver driver;
@@ -212,5 +216,33 @@ public class ElementActions {
 			links = getElements(locator);//update the element with new dom
 		}
 	}
+	
+	
+	
+	/**
+	 * switch to frame using frame name or id
+	 * @param frameNameOrId
+	 */
+	public void switchToFrame(String frameNameOrId) {
+		driver.switchTo().frame(frameNameOrId);
+	}
+	
+	/**
+	 * switch to frame using by locator
+	 * @param locator
+	 */
+	public void switchToFrame(By locator) {
+		WebElement element = getElement(locator);
+		driver.switchTo().frame(element);
+	}
+	
+	/**
+	 * switch to frame using index
+	 * @param index
+	 */
+	public void switchToFrame(int index) {
+		driver.switchTo().frame(index);
+	}
+
 
 }
